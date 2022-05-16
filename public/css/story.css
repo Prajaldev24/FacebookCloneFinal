@@ -1,0 +1,425 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0px 0.1px 4px rgba(0, 0, 0, 0.2);
+  }
+  nav .nav_left {
+    flex: 25%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+  nav .nav_left .facebook_logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  nav .nav_left .search_bar {
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  nav .nav_left .search_bar .search_icon {
+    height: 25px;
+    width: 25px;
+  }
+  nav .nav_left .search_bar .search {
+    height: 40px;
+    padding-left: 5px;
+    border: none;
+    outline: none;
+    background-color: #f0f2f5;
+  }
+  nav .nav_mid {
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav .nav_mid .navlinks {
+    display: flex;
+    align-items: center;
+  }
+  nav .nav_mid .navlinks .icon_link {
+    list-style: none;
+    margin: 0 10px;
+    padding: 10px 45px;
+    border-radius: 10px;
+  }
+  nav .nav_mid .navlinks .icon_link a svg {
+    height: 23px;
+    width: 23px;
+  }
+  nav .nav_mid .navlinks .icon_link:hover {
+    background-color: #f2f2f2;
+    transition: all 0.2s ease;
+  }
+  nav .nav_right {
+    flex: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  nav .nav_right .user {
+    background-color: #dbe7f2;
+    border-radius: 25px;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    height: 30px;
+    display: flex;
+  }
+  nav .nav_right .user a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: -2px;
+  }
+  nav .nav_right .user a .image_container {
+    margin-right: 10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav .nav_right .user a .image_container img {
+    height: inherit;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  nav .nav_right .user a h4 {
+    color: #4a8fe9;
+    margin-right: 10px;
+  }
+  nav .nav_right .nav_content {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav .nav_right .nav_content svg {
+    height: 20px;
+    width: 20px;
+  }
+  nav .nav_right .logout_content {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+  }
+  nav .nav_right .logout_content button{
+    height: inherit;
+    width: inherit  ;
+    outline: none;
+    border: none;
+    background-color: none;
+  }
+  nav .nav_right .logout_content button svg{
+    height: 30px;
+    width: 30px;
+  }
+.story_container {
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 50px);
+    width: 100%;
+    border: solid 2px lightgrey;
+    display: flex;
+  }
+  .story_container .left {
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.4);
+  }
+  .story_container .left .top {
+    border-bottom: solid 0.5px lightgray;
+    flex-basis: 20%;
+  }
+  .story_container .left .top .upper {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    justify-content: space-between;
+  }
+  .story_container .left .top .upper .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #d8dadf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .story_container .left .top .lower {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .story_container .left .top .lower .image_container {
+    margin-right: 10px;
+    height: 80px;
+    width: 80px;
+    border: solid 0.5px lightgray;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .story_container .left .top .lower .image_container img{
+    /* object-fit: contain; */
+    height: 120px;
+  }
+  .story_container .left .top .lower p {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .story_container .right {
+    flex-basis: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .story_container .right .story_action {
+    height: 350px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .story_container .right .story_action .photo_sto {
+    height: inherit;
+    width: 210px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(90deg, hsl(251deg, 70%, 56%) 0%, hsl(201deg, 90%, 77%) 100%);
+  }
+  .story_container .right .story_action .photo_sto .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .story_container .right .story_action .photo_sto .content .icon {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .story_container .right .story_action .photo_sto .content h4 {
+    color: white;
+  }
+  .story_container .right .story_action .text_sto {
+    height: inherit;
+    width: 210px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, hsl(342deg, 65%, 58%) 0%, hsl(279deg, 59%, 54%) 100%);
+  }
+  .story_container .right .story_action .text_sto .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .story_container .right .story_action .text_sto .content .icon {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .story_container .right .story_action .text_sto .content h4 {
+    color: white;
+  }
+  /* logout card */
+
+  .logout_card {
+    display: none;
+    position: absolute;
+    height: 450px;
+    width: 350px;
+    top: 50px;
+    right: 20px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  }
+  .logout_card .profile {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px lightgray;
+    padding-bottom: 10px;
+  }
+  .logout_card .profile .image_container {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: solid 0.5px lightgrey;
+    overflow: hidden;
+  }
+  .logout_card .profile .close_logout_content {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: auto;
+  }
+  .logout_card .profile .close_logout_content #myCloseBtn {
+    outline: none;
+    border: none;
+    background-color: none;
+  }
+  .logout_card .profile .close_logout_content #myCloseBtn i {
+      height: 30px;
+      width: 30px;
+  }
+  .logout_card .profile .image_container img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .logout_card .profile .info {
+    margin-left: 20px;
+  }
+  .logout_card .profile .info h3 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .logout_card .profile .info p a {
+    font-size: 15px;
+    text-decoration: none;
+    color: grey;
+  }
+  .logout_card .feedback {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: solid 1px lightgrey;
+  }
+  .logout_card .feedback .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #d8dadf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logout_card .feedback .info {
+    margin-left: 20px;
+  }
+  .logout_card .feedback .info h3 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .logout_card .feedback .info p a {
+    font-size: 15px;
+    text-decoration: none;
+    color: grey;
+  }
+  .logout_card .content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  .logout_card .content .content_control {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logout_card .content .content_control .left {
+    display: flex;
+    align-items: center;
+  }
+  .logout_card .content .content_control .left .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #d8dadf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logout_card .content .content_control .left .info {
+    margin-left: 20px;
+  }
+  .logout_card .content .content_control .left .info h3 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .logout_card .content .content_control .right .icon {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+  }
+  .logout_card .content .logout_control {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  .logout_card .content .logout_control .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #d8dadf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logout_card .content .logout_control .info {
+    margin-left: 20px;
+  }
+  .logout_card .content .logout_control .info h3 {
+    font-size: 18px;
+    font-weight: 400;
+  }

@@ -1,0 +1,88 @@
+Uploading multiple images
+
+public function PostImages(Request $request)
+    {
+        $rules = [
+            'images' => 'nullable'
+        ];
+
+        $fields = $request->validate($rules);
+
+        $user = Auth::user();
+
+        if ($request->hasFile('images')) {
+            $user->restro_detail->addMultipleMediaFromRequest(["images"])
+                ->each->toMediaCollection("photo_collection");
+        }
+        return response(['msg' => "success"]);
+    }
+
+
+Un used code from homepage.blade.php
+
+ <!-- <div class="container">
+         <div class="wrapper"> /image container text area
+            <div class="image">
+               <img src="" alt="">
+            </div>
+            <div class="content">
+               <div class="icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+               </div>
+               <div class="text">
+                  No file chosen, yet!
+               </div>
+            </div>
+            <div id="cancel-btn">
+               <i class="fas fa-times"></i>
+            </div>
+            <div class="file-name">
+               File name here
+            </div>
+         </div>
+         <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+         <input id="default-btn" type="file" hidden>
+      </div>
+      <script>
+         const wrapper = document.querySelector(".wrapper");
+         const fileName = document.querySelector(".file-name");
+         const defaultBtn = document.querySelector("#default-btn");
+         const customBtn = document.querySelector("#custom-btn");
+         const cancelBtn = document.querySelector("#cancel-btn i");
+         const img = document.querySelector("img");
+         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+         function defaultBtnActive(){
+           defaultBtn.click();
+         }
+         defaultBtn.addEventListener("change", function(){
+           const file = this.files[0];
+           if(file){
+             const reader = new FileReader();
+             reader.onload = function(){
+               const result = reader.result;
+               img.src = result;
+               wrapper.classList.add("active");
+             }
+             cancelBtn.addEventListener("click", function(){
+               img.src = "";
+               wrapper.classList.remove("active");
+             })
+             reader.readAsDataURL(file);
+           }
+           if(this.value){
+             let valueStore = this.value.match(regExp);
+             fileName.textContent = valueStore;
+           }
+         });
+      </script> -->
+      <!-- <script>
+          function enablePost(){
+              var postBtn = document.getElementById("postbtn");
+    
+              if(document.getElementById("status").value.length == 0){
+                postBtn.style.backgroundColor = "blue";
+              }else{
+                postBtn.style.backgroundColor = "grey"
+              }
+          }
+      </script> -->
