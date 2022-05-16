@@ -26,6 +26,8 @@ Route::group(['middleware'=>'guest'],function(){
 Route::group(['middleware'=>'auth'], function(){
     //Homepage
     Route::get('/homepage', [AuthController::class,'homepage'])->name('homepage');
+    
+    //Posting feed
     Route::post('/post-feed',[PostsController::class,'createPost'])->name('postfeed');
 
     // Profile

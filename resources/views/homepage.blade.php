@@ -12,8 +12,9 @@
                             <i data-visualcompletion="css-img" class="hu5pjgll m6k467ps" style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/OCLXtMwRrfj.png&quot;); background-position: -154px -74px; background-size: 190px 150px; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
                         </button>
                     </div>
-                    <form action="{{route('postfeed')}}" method="POST" class="lower" enctype="multipart/form-data">
-                        @csrf
+
+                    <!-- Post feed container start -->
+                    <div class="lower">
                         <div class="profile_container">
                             <div class="image_container">
                                 <img src="{{auth()->user()->profile->profile_pic}}" alt="" />
@@ -31,43 +32,55 @@
                                 </div>
                             </div>
                         </div>
-                        <div contenteditable="true" class="textarea" id="preview" style="color:grey;">
-                            <textarea id="status" placeholder="What's on your mind, {{auth()->user()->fname}}?" style="width:100%; height:40px; border:none; outline:none; overflow:auto;margin-bottom:20px" name="" id="" cols="30" rows="10" value=""></textarea>
-                        </div>
-                        <div class="color_emoti">
-                            <div class="icon">
-                                <img src="/images/color_picker.png" alt="">
+                        <form class="creat_post_form" action="{{route('postfeed')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <!-- status start -->
+                            <textarea name="caption" id="" cols="30" rows="10" placeholder="What's on your mind, {{auth()->user()->fname}}?"></textarea>
+                            <!-- status start -->
+
+                            <!-- Preview images start-->
+                            <div class="image_preview" id="preview">
+
                             </div>
-                            <div class="icon">
-                                <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/ID-6ITjaL2Q.png&quot;); background-position: 0px -26px; background-size: 26px 212px; background-repeat: no-repeat; display: inline-block;"></i>
+                            <!-- Preview images start-->
+
+                            <div class="color_emoti">
+                                <div class="icon">
+                                    <img src="/images/color_picker.png" alt="">
+                                </div>
+                                <div class="icon">
+                                    <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/ID-6ITjaL2Q.png&quot;); background-position: 0px -26px; background-size: 26px 212px; background-repeat: no-repeat; display: inline-block;"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="add_post_section">
-                            <label for="">Add to your post</label>
-                            <div class="action_container">
-                                <label for="img_input" class="post_action_content">
-                                    <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/mk6Qfpcq-kT.png&quot;); background-position: 0px -190px; background-size: 34px 510px; background-repeat: no-repeat; display: inline-block;"></i>
-                                </label>
-                                <input onchange="" id="img_input" style="display:none;" type="file" multiple class="post_action_content image_post">
+                            <div class="add_post_section">
+                                <label for="">Add to your post</label>
+                                <div class="action_container">
+                                    <label for="img_input" class="post_action_content">
+                                        <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/mk6Qfpcq-kT.png&quot;); background-position: 0px -190px; background-size: 34px 510px; background-repeat: no-repeat; display: inline-block;"></i>
+                                    </label>
+                                    <input name="images[]" id="img_input" style="display:none;" type="file" multiple class="post_action_content image_post">
                                 </input>
                                 <div class="post_action_content tag_people">
                                     <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/mk6Qfpcq-kT.png&quot;); background-position: 0px -164px; background-size: 34px 510px; background-repeat: no-repeat; display: inline-block;"></i>                                </div>
-                                <div class="post_action_content add_emo">
-                                    <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/mk6Qfpcq-kT.png&quot;); background-position: 0px -138px; background-size: 34px 510px; background-repeat: no-repeat; display: inline-block;"></i>
-                                </div>
-                                <div class="post_action_content add_location">
-                                    <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/jFFXSLBdcxF.png&quot;); background-position: 0px -234px; background-size: 26px 260px; background-repeat: no-repeat; display: inline-block;"></i>
-                                </div>
-                                <div class="post_action_content mic">
-                                    <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/V8UkvudEuVL.png&quot;); background-position: 0px -104px; background-size: 26px 156px; background-repeat: no-repeat; display: inline-block;"></i>
-                                </div>
-                                <div class="post_action_content dot_option">
+                                    <div class="post_action_content add_emo">
+                                        <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/mk6Qfpcq-kT.png&quot;); background-position: 0px -138px; background-size: 34px 510px; background-repeat: no-repeat; display: inline-block;"></i>
+                                    </div>
+                                    <div class="post_action_content add_location">
+                                        <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/jFFXSLBdcxF.png&quot;); background-position: 0px -234px; background-size: 26px 260px; background-repeat: no-repeat; display: inline-block;"></i>
+                                    </div>
+                                    <div class="post_action_content mic">
+                                        <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/V8UkvudEuVL.png&quot;); background-position: 0px -104px; background-size: 26px 156px; background-repeat: no-repeat; display: inline-block;"></i>
+                                    </div>
+                                    <div class="post_action_content dot_option">
                                         <i data-visualcompletion="css-img" class="hu5pjgll bixrwtb6" style="height: 24px; width: 24px; background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/mk6Qfpcq-kT.png&quot;); background-position: 0px -112px; background-size: 34px 510px; background-repeat: no-repeat; display: inline-block;"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <button type="submitt" id="postbtn" class="post_add_btn" style="outline:none ;" action=''>Post</button>
-                    </form>
+                            <button type="submitt" id="postbtn" class="post_add_btn" style="outline:none ;" action=''>Post</button>
+                        </form>
+
+                    </div>
+                    <!-- Post feed container end -->
                 </div>
             </div>
         </div>
@@ -173,7 +186,7 @@
                         <img src="{{auth()->user()->profile->profile_pic}}" alt="" />  
                     </div>
                     <button id="post_card_open_btn">
-                        <p>What's on your mind, Prajal?</p>
+                        <p>What's on your mind, {{auth()->user()->fname}}?</p>
                     </button>                  
                 </div>
                 <span class="line">

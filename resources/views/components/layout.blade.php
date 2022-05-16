@@ -34,5 +34,16 @@
         </div>
 
     @endif
+    @if(session()->has('fail'))
+        <div 
+            x-data="{show:true}"
+            x-init = "setTimeout(()=>show = false,3000)"
+            x-show="show"
+            style="position:fixed;background-color:red;padding: 3px 10px;bottom:10px;right:10px;color:white;border-radius:10px;font-size:16px"
+        >
+            <p>{{session('fail')}}</p>
+        </div>
+
+    @endif
 </body>
 </html>

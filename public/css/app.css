@@ -42,10 +42,15 @@
   align-items: center;
   justify-content: center;
 }
+
+
 .create_post_card .post_card .create_post .upper .closebtn:hover {
   background-color: #c8cad1;
   cursor: pointer ;
 }
+
+/* Post Card form start*/
+
 .create_post_card .post_card .create_post .lower {
   padding: 10px 15px;
 }
@@ -81,22 +86,33 @@
   align-items: center;
   justify-content: center;
 }
-.create_post_card .post_card .create_post .lower .textarea {
+.create_post_card .post_card .create_post .lower .creat_post_form textarea {
+  padding: 0 10px;
+}
+.create_post_card .post_card .create_post .lower .creat_post_form textarea {
   outline: none;
   border: none;
   margin-top: 20px;
-  /* border: noncde; */
-  height: 150px;
-  width: 450px;
+  height: 50px;
+  width: 95%;
   font-size: 20px;
   overflow-y: scroll;
+  font-size: 16px;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-.create_post_card .post_card .create_post .lower .textarea:empty:before {
+.create_post_card .post_card .create_post .lower .creat_post_form textarea:empty:before {
   content:attr(placeholder);
   color:gray;
 }
-.create_post_card .post_card .create_post .lower .color_emoti {
+.create_post_card .post_card .create_post .lower .creat_post_form .image_preview{
+  height: 100px;
+  overflow: scroll;
+  outline: none;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.create_post_card .post_card .create_post .lower .creat_post_form .color_emoti {
   height: 40px;
   width: 100%;
   margin: 10px 0;
@@ -104,7 +120,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.create_post_card .post_card .create_post .lower .color_emoti .icon {
+.create_post_card .post_card .create_post .lower .creat_post_form .color_emoti .icon {
   height: inherit;
   width: 40px;
   /* border: solid 0.5px black; */
@@ -112,11 +128,11 @@
   justify-content: center;
   align-items: center;
 }
-.create_post_card .post_card .create_post .lower .color_emoti .icon img{
+.create_post_card .post_card .create_post .lower .creat_post_form .color_emoti .icon img{
   height: inherit;
   width: inherit;
 }
-.create_post_card .post_card .create_post .lower .add_post_section {
+.create_post_card .post_card .create_post .lower .creat_post_form .add_post_section {
   border: solid 1px lightgray;
   border-radius: 10px;
   height: 50px;
@@ -125,7 +141,7 @@
   padding: 0 10px;
   justify-content: space-between;
 }
-.create_post_card .post_card .create_post .lower .add_post_section .action_container {
+.create_post_card .post_card .create_post .lower .creat_post_form .add_post_section .action_container {
   height: 40px;
   width: 250px;
   color: white;
@@ -133,7 +149,7 @@
   align-items: center;
   justify-content: center;
 }
-.create_post_card .post_card .create_post .lower .add_post_section .action_container .post_action_content {
+.create_post_card .post_card .create_post .lower .creat_post_form .add_post_section .action_container .post_action_content {
   height: 30px;
   width: 40px;
   margin-right: 10px;
@@ -142,20 +158,20 @@
   justify-content: center;
   align-items: center;
 }
-.create_post_card .post_card .create_post .lower .add_post_section .action_container .post_action_content{
+.create_post_card .post_card .create_post .lower .creat_post_form .add_post_section .action_container .post_action_content{
   padding: 3px 6px;
   border-radius: 50%;
 }
-.create_post_card .post_card .create_post .lower .add_post_section .action_container .post_action_content:hover{
+.create_post_card .post_card .create_post .lower .creat_post_form .add_post_section .action_container .post_action_content:hover{
   background-color: #f2f2f2;
   cursor: pointer;
 }
-.create_post_card .post_card .create_post .lower .add_post_section .action_container .dot_option span {
+.create_post_card .post_card .create_post .lower .creat_post_form .add_post_section .action_container .dot_option span {
   height: 3px;
   width: 3px;
   background-color: grey;
 }
-.create_post_card .post_card .create_post .lower button {
+.create_post_card .post_card .create_post .lower .creat_post_form button {
   height: 40px;
   width: 100%;
   background-color: #5296df;
@@ -165,7 +181,7 @@
   margin-top: 10px;
   cursor: pointer;
 }
-.create_post_card .post_card .create_post .lower button:hover {
+.create_post_card .post_card .create_post .lower .creat_post_form button:hover {
   background-color: #508fd3;
   /* background-color: #; */
 }
