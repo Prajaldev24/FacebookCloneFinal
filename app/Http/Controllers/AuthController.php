@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\AuthCheck;
-use App\Models\Profile;
+use App\Models\Post;
 use App\Models\User;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
 
 
 class AuthController extends Controller
 {
 
     public function homepage(){
-        return view('homepage');
+        $posts = Post::all();
+        return view('homepage',[
+            'posts' => $posts,
+        ]);
     }
  
     public function profile(){
@@ -75,10 +77,10 @@ class AuthController extends Controller
         $profile->bio = "";
         $profile->save();
 
-        return redirect('/homepage')->with('success','You have been registered successfully');
-
-        //with() works as the combination of session()->flash();
+        return redirect(route('homepage'))->with('success','You have been registered successfully');
         
+        //with() works as the combination of session()->flash();
+
     }   
     public function logout(){
         auth()->logout();

@@ -46,7 +46,7 @@
 
 .create_post_card .post_card .create_post .upper .closebtn:hover {
   background-color: #c8cad1;
-  cursor: pointer ;
+  cursor: pointer;
 }
 
 /* Post Card form start*/
@@ -792,9 +792,30 @@ nav .nav_right .logout_content button svg{
 .container .main_content .post_card .top_part .left .option_btn:hover {
   background-color: #f2f2f2;
 }
+.container .main_content .post_card .caption{
+  width:100%;
+  height: auto;
+  padding: 10px 10px;
+  text-align:left;
+}
+.container .main_content .post_card .caption h4{
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 20px;
+}
 .container .main_content .post_card .image_container {
   padding: 0;
   margin: 0;
+  height: auto;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .main_content .post_card .image_container img {
+  height: 400px;
+  object-fit:contain;
 }
 .container .main_content .post_card .bottom_part {
   height: 90px;

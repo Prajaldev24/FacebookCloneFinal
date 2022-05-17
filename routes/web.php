@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostController;
+// use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/homepage', [AuthController::class,'homepage'])->name('homepage');
     
     //Posting feed
-    Route::post('/post-feed',[PostsController::class,'createPost'])->name('postfeed');
+    Route::post('/post-feed',[PostController::class,'createPost'])->name('postfeed');
 
     // Profile
     Route::get('/profile', [AuthController::class,'profile'])->name('profile'); 
@@ -40,6 +41,6 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/upload-cover-pic',[ProfileController::class,'updateCover'])->name('cPUpload');
 
     // Story
-    Route::get('/story',[PostsController::class,'storyFeed']);
+    Route::get('/story',[PostController::class,'storyFeed']);
     Route::get('logout',[AuthController::class,'logout']);
 });
