@@ -147,13 +147,12 @@
         <!-- Main Content Start -->
         <div class="main_content">
 
-            <div class="story_section">
+            <div class="story_section" style="overflow: hidden;">
                 <div class="arrow">
                     <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="100" cy="100" r="100" fill="white"/>
                         <path d="M155.35 104.256C158.253 101.301 158.211 96.5528 155.256 93.6499L107.106 46.3444C104.151 43.4415 99.4026 43.4836 96.4997 46.4383C93.5968 49.393 93.6388 54.1416 96.5936 57.0445L139.394 99.0938L97.3444 141.894C94.4415 144.849 94.4836 149.597 97.4383 152.5C100.393 155.403 105.142 155.361 108.044 152.406L155.35 104.256ZM36.0664 107.508L150.066 106.5L149.934 91.5002L35.9336 92.5091L36.0664 107.508Z" fill="#606266"/>
                     </svg>
-
                 </div>
                 <a href="/story" class="add">
                     <img src="{{auth()->user()->profile->profile_pic}}" alt="" />
@@ -167,15 +166,19 @@
                         <p>Create Story</p>
                     </div>  
                 </a>
-                <div class="story_container">
-                    <div class="profile">
-                        <img src="" alt="" />
-                        <span></span>
+                <div class="inner_div">
+                    <!-- Story view start -->
+                    @foreach($stories as $story)
+                    <div class="story_container">
+                        <img src="{{$story->images}}" alt="" />
+                        <div class="profile">
+                            <span></span>
+                        </div>
                     </div>
+                    @endforeach
+                    <!-- Story view end -->
                 </div>
-                <div class="story_container"></div>
-                <div class="story_container"></div>
-                <div class="story_container"></div>
+                
             </div>
 
             <div class="create_post">

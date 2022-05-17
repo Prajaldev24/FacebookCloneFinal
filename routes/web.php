@@ -41,6 +41,11 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/upload-cover-pic',[ProfileController::class,'updateCover'])->name('cPUpload');
 
     // Story
-    Route::get('/story',[PostController::class,'storyFeed']);
+    Route::get('/story',[PostController::class,'storyFeed'])->name('storyPage');
+
+    //Upload story
+    Route::post('/upload-story',[PostController::class,'createStory'])->name('storyUpload');
+
+    //Log out user
     Route::get('logout',[AuthController::class,'logout']);
 });

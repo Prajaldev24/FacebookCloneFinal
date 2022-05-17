@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Profile;
+use App\Models\Story;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,9 +14,11 @@ class AuthController extends Controller
 {
 
     public function homepage(){
-        $posts = Post::all();
+        $posts = Post::latest()->get();
+        $stories = Story::latest()->get();
         return view('homepage',[
             'posts' => $posts,
+            'stories' => $stories,
         ]);
     }
  

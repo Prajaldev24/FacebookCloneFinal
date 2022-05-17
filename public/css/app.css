@@ -551,39 +551,49 @@ nav .nav_right .logout_content button svg{
   width: 560px;
   height: 250px;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  overflow: hidden;
   position: relative;
 }
-.container .main_content .story_section .arrow {
+.container .main_content .story_section {
+  height: 250px;
+  width: auto;
+  display: flex;
+  margin-top: 50px;
+  padding: 0;
+}
+.container .main_content .story_section  .arrow {
   position: absolute;
   right: -20px;
   bottom: 40%;
 }
-.container .main_content .story_section .arrow svg:hover {
+.container .main_content .story_section  .arrow svg:hover {
   fill: #d3d3d3;
 }
-.container .main_content .story_section .add {
+.container .main_content .story_section  .add {
   background-color: lightgray;
   height: 200px;
   width: 105px;
   border-radius: 10px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  margin-right: 5px;
   position: relative;
   display: flex;
   justify-content: center;
+  z-index: 5;
 }
-.container .main_content .story_section .add img {
+.container .main_content .story_section  .add img {
   height: inherit;
 }
-.container .main_content .story_section .add svg {
+.container .main_content .story_section  .add svg {
   position: absolute;
   bottom: 30px;
   z-index: 1  ;
   border: solid 5px white;
   border-radius: 50%;
 }
-.container .main_content .story_section .add .addsign {
+.container .main_content .story_section  .add .addsign {
   position: absolute;
   height: 25%;
   width: 100%;
@@ -595,18 +605,24 @@ nav .nav_right .logout_content button svg{
   text-align: center;
   font-size: 12px;
 }
-.container .main_content .story_section .add:hover {
+.container .main_content .story_section  .add:hover {
   background-color: black;
 }
-.container .main_content .story_section .add:hover img {
+.container .main_content .story_section  .add:hover img {
   opacity: 0.7;
   height: 210px;
   transition: all 0.5s ease;
 }
-.container .main_content .story_section .story_container {
+.container .main_content .story_section .inner_div {
+  display: flex;
+  width: auto;
+}
+
+.container .main_content .story_section .inner_div .story_container {
   background-color: lightgray;
   height: 200px;
   width: 105px;
+  margin: 0 5px;
   border-radius: 10px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 }

@@ -12,14 +12,15 @@
                         <!-- Story image preveiw start -->
                         <div class="story_preview">
                             <div id="story_preview">
-                            
+                                <!-- Image preview will be here -->
                             </div>
                         </div>
                         <!-- Story image preveiw end -->
                         <div class="lower">
                             <button id="discard_btn" class="discard_btn">Discard</button>
-                            <form id="post_story_form" action="" method="POST" enctype="multipart/form-data">
-                                <input onchange="handleStoryFile()" style="display: none;" id="story_input" type="file"/>
+                            <form id="post_story_form" action="{{route('storyUpload')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input name="story_pic" onchange="handleStoryFile()" style="display: none;" id="story_input" type="file"/>
                                 <button class="post_btn" type="submit">Post</button>
                             </form>
                         </div>
