@@ -4,30 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
-use App\Models\Profile;
 use App\Models\Story;
+use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
 class AuthController extends Controller
 {
 
-    public function homepage(){
-        $posts = Post::latest()->get();
-        $stories = Story::latest()->get();
-        return view('homepage',[
-            'posts' => $posts,
-            'stories' => $stories,
-        ]);
+    public function check(){
+        if(Auth::check()){
+            $users = User::all();
+            $posts = Post::latest()->get();
+            $stories = Story::latest()->get();
+            return view('homepage',[
+                'posts' => $posts,  
+                'stories' => $stories,
+                'users' => $users,
+            ]);
+        }
+        else{
+            return view('login');
+        }
     }
- 
+
     public function profile(){
         return view('profile');
-    }
-    //Login view
-    public function login(){
-        return view('login');
     }
 
     //Login 
@@ -37,22 +41,15 @@ class AuthController extends Controller
             'lpassword'=>'required|min:8',
         ]);
         
-        $user = User::where('email','=',$request->lemail)->first();
-        
-        if($user){
-            if(Hash::check($request->lpassword, $user->password)){
-                auth()->login($user);   
-                // $request->session()->put('loginId',$user->id);
-                // dd(session()->all());    
-                return redirect('/homepage')->with('success','Welcome Back');
-            }
-            else{
-                session()->flash('fail', 'Password doesnt match.');
-            }
-        }else{
-            session()->flash('fail', 'The credendtials do not match');
+        if (Auth::attempt(['email' => $request->lemail, 'password' => $request->lpassword])) {
+            // The user is active, not su   spended, and exists.
+            return redirect(route('authcheck'))->with('success','Welcome Back');
         }
-        return redirect('/');
+        else{
+            session()->flash('fail', 'Credentials do not match.');
+        }
+
+        return redirect(route('authcheck'));
     }   
 
     //Registration
@@ -71,16 +68,13 @@ class AuthController extends Controller
          
         $user = User::create($attributes);
 
-        auth()->login($user);
+        auth()->login($user); // login after registration 
 
         $profile = new Profile();
-        $profile->user_id = $user->id;
-        $profile->profile_pic = "";
-        $profile->cover_pic = "";
-        $profile->bio = "";
+        $profile->user_id = $user->id; // newly creted user's id is assigned as foreign key in profile
         $profile->save();
 
-        return redirect(route('homepage'))->with('success','You have been registered successfully');
+        return redirect(route('authcheck'))->with('success','You have been registered successfully');
         
         //with() works as the combination of session()->flash();
 

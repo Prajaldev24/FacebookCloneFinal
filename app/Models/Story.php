@@ -15,8 +15,8 @@ class Story extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
-    public function simages(){
-        return $this->hasMany(Simage::class);
+    public function simage(){
+        return $this->hasOne(Simage::class);
     }
 }
 // Post::where('Expiration_date','<',Carbon::now())->delete();

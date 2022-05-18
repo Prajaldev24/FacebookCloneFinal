@@ -21,19 +21,21 @@ class PostController extends Controller
                 'caption'=>$request->caption,
             ]);
            
-            foreach($request->file('images') as $imageFile){
-                $extension = $imageFile->getClientOriginalExtension();
-                $fileName = time().Str::random(5).'.'.$extension;
-                $imageFile->move(public_path('/uploads/post-images/'),$fileName);
-                Image::create([
-                    'post_id' => $post->id,
-                    'image' => 'uploads/post-images/'.$fileName,
-                ]);
+            if($request->hasFile('images')){
+                foreach($request->file('images') as $imageFile){
+                    $extension = $imageFile->getClientOriginalExtension();
+                    $fileName = time().Str::random(5).'.'.$extension;
+                    $imageFile->move(public_path('/uploads/post-images/'),$fileName);
+                    Image::create([
+                        'post_id' => $post->id,
+                        'image' => 'uploads/post-images/'.$fileName,
+                    ]);
+                }
             }
-            return redirect(route('homepage'))->with('success',"Your post has been uploaded");
+            return redirect(route('authcheck'))->with('success',"Your post has been uploaded");
         }
         else{
-            return redirect(route('homepage'))->with('fail',"Nothing to post.");
+            return redirect(route('authcheck'))->with('fail',"Nothing to post.");
         }
     }
 
@@ -57,7 +59,7 @@ class PostController extends Controller
                 'story_id' => $story->id,
                 'image' => 'uploads/story-images/'.$fileName,
             ]);
-            return redirect(route('homepage'))->with('success','Story added');
+            return redirect(route('authcheck'))->with('success','Story added');
         }
         else{
             return redirect(route('storyPage'))->with('fail','Add an image to upload');

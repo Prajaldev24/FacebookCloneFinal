@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('story_id');
             $table->string('image');
             $table->timestamps();
-
+            
             $table->foreign('story_id')->references('id')->on('stories')->onDelete('cascade');
         });
     }

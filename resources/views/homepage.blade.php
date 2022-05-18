@@ -147,13 +147,23 @@
         <!-- Main Content Start -->
         <div class="main_content">
 
-            <div class="story_section" style="overflow: hidden;">
-                <div class="arrow">
+            <!-- Story Section start -->
+            <div class="story_section">
+                <!-- left arrow  -->
+                <button id="larrow" class="left_arrow">
+                <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="100" transform="matrix(-1 0 0 1 100 100)" fill="white"/>
+                    <path d="M44.6501 104.256C41.7472 101.301 41.7892 96.5528 44.7439 93.6499L92.8941 46.3444C95.8489 43.4415 100.597 43.4836 103.5 46.4383C106.403 49.393 106.361 54.1416 103.406 57.0445L60.6063 99.0938L102.656 141.894C105.558 144.849 105.516 149.597 102.562 152.5C99.607 155.403 94.8584 155.361 91.9555 152.406L44.6501 104.256ZM163.934 107.508L49.9337 106.5L50.0664 91.5002L164.066 92.5091L163.934 107.508Z" fill="#606266"/>
+                </svg>
+                <!-- right arrow -->
+                </button>
+                <button id="rarrow" class="right_arrow">
                     <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="100" cy="100" r="100" fill="white"/>
                         <path d="M155.35 104.256C158.253 101.301 158.211 96.5528 155.256 93.6499L107.106 46.3444C104.151 43.4415 99.4026 43.4836 96.4997 46.4383C93.5968 49.393 93.6388 54.1416 96.5936 57.0445L139.394 99.0938L97.3444 141.894C94.4415 144.849 94.4836 149.597 97.4383 152.5C100.393 155.403 105.142 155.361 108.044 152.406L155.35 104.256ZM36.0664 107.508L150.066 106.5L149.934 91.5002L35.9336 92.5091L36.0664 107.508Z" fill="#606266"/>
                     </svg>
-                </div>
+                </button>
+                <!-- create story anchor tag -->
                 <a href="/story" class="add">
                     <img src="{{auth()->user()->profile->profile_pic}}" alt="" />
                     <svg width="35" height="35" viewBox="0 0 660 660" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,20 +176,30 @@
                         <p>Create Story</p>
                     </div>  
                 </a>
-                <div class="inner_div">
-                    <!-- Story view start -->
-                    @foreach($stories as $story)
-                    <div class="story_container">
-                        <img src="{{$story->images}}" alt="" />
-                        <div class="profile">
-                            <span></span>
+                <!-- .inner story card section/ container -->
+                <div class="inner_section">
+                    <div id="story_container" class="story_container">
+                        <!-- for each loop start -->
+                        @foreach($stories as $story)
+                        <div class="story_card">
+                            <div class="image_container">
+                                <img class="story_image" src="{{asset($story->simage->image)}}" alt="">
+                            </div>
+                            <div class="profile_circular_img">
+                                <img src="{{$story->author->profile->profile_pic}}" alt="" class="profile_picture">
+                            </div>
+                            <div class="profile_name">
+                                <h6>{{$story->author->fname}} {{$story->author->lname}}</h6>
+                            </div>
+                            
                         </div>
+                        @endforeach
+                        <!-- for each loop end -->
                     </div>
-                    @endforeach
-                    <!-- Story view end -->
                 </div>
-                
             </div>
+            <!-- Story Section end-->
+
 
             <div class="create_post">
                 <div class="upper">
@@ -254,8 +274,8 @@
                     </div>
                     <p>Create room</p>
                 </div>
-                <div class="room_members_container">
-                    
+                <div class="room_members_container" style="display: flex; align-items:center;">
+                    <img style="height: 50px;" src="/images/members.png" alt="">
                 </div>
             </div>
 
@@ -289,7 +309,7 @@
                     </div>
                     <div class="image_container">
                         @foreach($post->images as $image)
-                            <img src="{{$image->image}}" alt="" />
+                            <img src="{{ asset($image->image) }}" alt="" />
                         @endforeach
                     </div>
 
@@ -426,58 +446,18 @@
                             </span>
                         </div>
                     </div>
-                    <div class="contact_container"  >
+                    <div class="contact_container">
+                        @foreach($users as $user)
                         <div class="contact">
                             <div class="img_container" style="position:relative">
-                                <img src="https://external.fpkr1-1.fna.fbcdn.net/safe_image.php?w=500&h=261&url=https%3A%2F%2Flh3.googleusercontent.com%2FH5BHTvkvBM2-MGrd7uIXMSAoLr5cte9_eWot_iO_tVwdscttIM72VMyZ3HioOSE7NFMstB6FEztJqNwn4cibVOF5QlHqR30if_KCHKlUA9MEJ0A%3Dw1200-h630-rj-pp-e365&cfs=1&ext=jpg&_nc_oe=70122&_nc_sid=06c271&_nc_o2e=1&ccb=3-6&_nc_hash=AQFmIY_9J9VSrf-Z" alt="" />
-                            </div>
-                                <span style="background-color:#d3e3d6;color:#2f9a48;font-size:10px;height:10px;width:20px;border:solid 3px white;
-                                    font: weight 600px; display:flex;align-items:center;justify-content:center;position:absolute;bottom:0;left:15px;border-radius:15px;">
-                                    1h
-                                </span>
-                            <h3 style="font-weight: 500;" class="name">
-                                Prajal Rana
-                            </h3>
-                        </div>
-                        <div class="contact">
-                            <div class="img_container" style="position:relative">
-                                <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-1/262932630_3345736799044076_440811122378242122_n.jpg?stp=c0.0.480.480a_dst-jpg_p480x480&_nc_cat=111&ccb=1-6&_nc_sid=7206a8&_nc_ohc=6K9JhMjLoi4AX85mBu2&_nc_ht=scontent.fpkr1-1.fna&oh=00_AT_cd6UvmI_d7ugJR5DMCYcpzFy36ZKAs6syEcUaQd8FrQ&oe=627E27C7" alt="" />
-                            </div>
-                                <span style="background-color:#d3e3d6;color:#2f9a48;font-size:10px;height:10px;width:25px;border:solid 3px white;
-                                    font: weight 600px; display:flex;align-items:center;justify-content:center;position:absolute;bottom:0;left:15px;border-radius:15px">
-                                    30m
-                                </span>
-                            <h3 style="font-weight: 500;" class="name">
-                                Elizabeth Wondor
-                            </h3>
-                        </div>
-                        <div class="contact">
-                            <div class="img_container" style="border:solid 3px lightgrey;">
-                                <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/279858450_549622113473153_1171472893397502339_n.jpg?_nc_cat=104&ccb=1-6&_nc_sid=8bfeb9&_nc_ohc=NwPUOrtLV7QAX9ENab8&_nc_ht=scontent.fpkr1-1.fna&oh=00_AT_9c1HXHcztHYbrFxedkYydyAgjshQYvbsWhT8SEJY66g&oe=627E3F82" alt="" />
+                                <img src="{{ asset($user->profile->profile_pic) }}" alt="" />
                                 <span></span>
                             </div>
                             <h3 style="font-weight: 500;" class="name">
-                                Tom Holland
+                                {{$user->fname}} {{$user->lname}}
                             </h3>
                         </div>
-                        <div class="contact">
-                            <div class="img_container">
-                                <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t45.1600-4/274800747_6254021128894_7692071757161991246_n.jpg?stp=cp0_dst-jpg_p960x960_q75_spS444&_nc_cat=109&ccb=1-6&_nc_sid=67cdda&_nc_ohc=UEh1FuKOPQEAX8PMExm&_nc_ht=scontent.fpkr1-1.fna&oh=00_AT_Yi30CF2dQkh8_WhatnVTQb_t9Zt1_gZYDwV2mJuZaIw&oe=627EE9C3" alt="" />
-                                <span></span>
-                            </div>
-                            <h3 style="font-weight: 500;" class="name">
-                                Micheal Jackson
-                            </h3>
-                        </div>
-                        <div class="contact">
-                            <div class="img_container">
-                                <img src="https://scontent.fpkr1-1.fna.fbcdn.net/v/t39.30808-6/279707809_6465568116832835_4568729045434822971_n.jpg?stp=dst-jpg_p843x403&_nc_cat=1&ccb=1-6&_nc_sid=8bfeb9&_nc_ohc=QTi97vuPplEAX8uvuUS&_nc_ht=scontent.fpkr1-1.fna&oh=00_AT-IBnlLUTmGenp8GGbd5lnL_Slezfl69Yjn-OgXkYujYQ&oe=627FAC40" alt="" />
-                                <span></span>
-                            </div>
-                            <h3 style="font-weight: 500;" class="name">
-                                Margarot Robbie
-                            </h3>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

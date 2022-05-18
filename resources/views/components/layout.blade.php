@@ -23,6 +23,7 @@
     {{$content}}
     <script src="{{asset('js/homepage.js')}}"></script>
     <script src="{{asset('js/imagePreview.js')}}"></script>
+    <script src="{{asset('js/slider.js')}}"></script>
     @if(session()->has('success'))
         <div 
             x-data="{show:true}"

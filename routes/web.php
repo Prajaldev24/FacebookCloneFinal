@@ -18,15 +18,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/',[AuthController::class, 'check'])->name('authcheck');
+
 Route::group(['middleware'=>'guest'],function(){
-    Route::get('/',[AuthController::class,'login'])->name('login')->middleware('isLoggedIn');
+    // Route::get('/',[AuthController::class,'login'])->name('login')->middleware('isLoggedIn');
     Route::post('register-user',[AuthController::class,'registerUser'])->name('register-user');
     Route::post('login-user',[AuthController::class,'loginUser'])->name('login-user');
 });
 
 Route::group(['middleware'=>'auth'], function(){
     //Homepage
-    Route::get('/homepage', [AuthController::class,'homepage'])->name('homepage');
+    // Route::get('/', [AuthController::class,'homepage'])->name('homepage');
     
     //Posting feed
     Route::post('/post-feed',[PostController::class,'createPost'])->name('postfeed');
