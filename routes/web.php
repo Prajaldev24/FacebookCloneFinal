@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 // use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Like;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -51,4 +53,7 @@ Route::group(['middleware'=>'auth'], function(){
 
     //Log out user
     Route::get('logout',[AuthController::class,'logout']);
+
+    // like post
+    Route::post('/like-post',[LikeController::class,'likePost'])->name('likepost');
 });
