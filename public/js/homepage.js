@@ -42,3 +42,23 @@
          logoutCard.style.display = "none";
      }
  }
+
+
+ // Menu bar
+ var menuBar = document.getElementById('menubar');
+ var menuBarClose = document.getElementById('closemenubar');
+
+ // menu link card
+ var menuLinkCard = document.getElementById('menulinkcard');
+
+ menuBar.onclick = function(){
+    menuLinkCard.style.left = "0%"
+    menuLinkCard.style.transition = "all 0.5s ease"
+    menuBarClose.style.zIndex = 3;
+ }
+ menuBarClose.onclick = function(){
+    menuLinkCard.style.left = "-60%"
+    menuLinkCard.style.transition = "all 0.5s ease"
+    menuBar.style.zIndex = 2;
+    this.style.zIndex = 1;
+ }

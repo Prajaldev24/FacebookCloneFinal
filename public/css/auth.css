@@ -18,73 +18,32 @@ body {
     margin-left: 20%;
     display: flex;
     /* justify-content: center; */
+    flex-direction: column;
     margin-top: 140px;
   }
-  body .main .left_part .account .logo {
+  body .main .left_part .logo {
     font-weight: 800;
     font-size: 40px;
     color: #1877f2;
     letter-spacing: 0.1px;
     font-stretch: condensed;
   }
-  body .main .left_part .account .recent_login {
+  body .main .left_part .recent_login {
     margin-top: 20px;
   }
-  body .main .left_part .account .recent_login h2 {
+  body .main .left_part .recent_login h2 {
     font-weight: 500;
     font-size: 30px;
   }
-  body .main .left_part .account .recent_login p {
+  body .main .left_part  .recent_login p {
     font-size: 12px;
     font-weight: 300;
     color: rgb(83, 83, 83);
   }
-  body .main .left_part .account .recent_login .s {
+  body .main .left_part  .recent_login .s {
     margin: 5px 0;
   }
-  body .main .left_part .account .account_container {
-    width: 380px;
-    height: 220px;
-    display: flex;
-    justify-content: space-between;
-  }
-  body .main .left_part .account .account_container .account_add_card {
-    margin-top: 10px;
-    height: 220px;
-    width: 175px;
-    background-color: white;
-    border: solid 0.5px lightgrey;
-    border-radius: 15px;
-    background: #F5F6F7;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  body .main .left_part .account .account_container .account_add_card:hover {
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
-    transition: all 0.5s ease-in-out;
-  }
-  body .main .left_part .account .account_container .account_add_card .add_sign {
-    flex: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  body .main .left_part .account .account_container .account_add_card .add_sign svg {
-    height: 45px;
-    width: 45px;
-  }
-  body .main .left_part .account .account_container .account_add_card .text_div {
-    flex: 1;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1877F2;
-    font-size: 20px;
-  }
+  
   body .main #register_container {
     position: absolute;
     height: 650px;
@@ -325,3 +284,38 @@ body {
     background-color: #ffffff;
   }
   
+
+  @media screen and (max-width:450px) {
+    footer{
+      display: none;
+    }
+    .main{
+      display: flex;
+      flex-direction: column;
+    }
+    .main .left_part{
+      position: absolute;
+      top: 5px;
+      margin-top: 10px;
+    }
+    .main .left_part p{
+      display: none;
+    }
+    .main .right_part{
+      display: flex;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+      justify-content: center;
+    }
+    .main .right_part .form_container{
+      width:98%;
+    }
+    .main .right_part .form_container .login_form{
+      width: 100%;
+    }
+
+    .main .left_part .account p{
+      display: none;
+    }
+  }

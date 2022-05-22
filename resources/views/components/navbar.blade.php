@@ -19,6 +19,19 @@
             </svg>
             <input type="text" class="search" placeholder='Search Facekbook'/>
         </div>
+        <div class="menu_bar_container">
+            <div id="menubar" class="menu_bar" style="margin-left:10px;display: flex; align-items:center; justify-content:center;position:absolute;top:5px;left:0; border-radius:50%; background-color: white;">
+                <a aria-label="More" class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of n00je7tq arfg74bv qs9ysxi8 k77z8yql abiwlrkh p8dawk7l lzcic4wl bp9cbjyn j83agx80 cbu4d94t datstx6m taijpn5t l9j0dhe7 k4urcfbm" onclick="" role="link" tabindex="0"><span class="l9j0dhe7"><svg viewBox="0 0 28 28" class="a8c37x1j ms05siws l3qrxjdp b7h9ocf4 py1f6qlh" fill="#727272" height="28" width="28"><path d="M23.5 4a1.5 1.5 0 110 3h-19a1.5 1.5 0 110-3h19zm0 18a1.5 1.5 0 110 3h-19a1.5 1.5 0 110-3h19zm0-9a1.5 1.5 0 110 3h-19a1.5 1.5 0 110-3h19z"></path></svg><!--$--><span class="pmk7jnqg h5g66v2i nezaghv5"></span><!--/$--></span><div class="n00je7tq arfg74bv qs9ysxi8 k77z8yql i09qtzwb n7fi1qx3 b5wmifdl hzruof5a pmk7jnqg j9ispegn kr520xx4 c5ndavph art1omkt ot9fgl3s" data-visualcompletion="ignore" style="border-radius:8px;bottom:4px;left:0;right:0;top:4px"></div></a>
+            </div>
+            <div id="closemenubar" class="close_menu_bar" style="margin-left:8px;background-color:transparent; display: flex; align-items:center; justify-content:center;">
+                <svg width="32" height="32" viewBox="0 0 185 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle r="92.5" transform="matrix(-1 0 0 1 92.5 92.5)" fill="white"/>
+                <line x1="146.701" y1="149.308" x2="37.6967" y2="40.3033" stroke="#606266" stroke-width="15"/>
+                <line x1="38.1944" y1="147.701" x2="147.199" y2="38.6967" stroke="#606266" stroke-width="15"/>
+                </svg>            
+            </div>
+        </div>
+        </div>
     </div>
     <!-- Left Nav End -->
 

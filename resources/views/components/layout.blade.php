@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <style>
         *{
             margin: 0;
@@ -24,6 +25,7 @@
     <script src="{{asset('js/homepage.js')}}"></script>
     <script src="{{asset('js/imagePreview.js')}}"></script>
     <script src="{{asset('js/slider.js')}}"></script>
+    <script src="{{asset('js/liveLike.js')}}"></script>
     @if(session()->has('success'))
         <div 
             x-data="{show:true}"

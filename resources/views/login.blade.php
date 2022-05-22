@@ -19,28 +19,8 @@
 <body>
     <div class="main">
         <div class="left_part">
-            <div class="account">
-                <h1 class="logo ">facebook</h1>
-                <p style="font-size:30px;font-weight:400;">Connect with friends and the world around you on Facebook.</p>
-                <!-- <div class="recent_login ">
-                    <h2 class="s">Recent Login</h2>
-                    <p class="s">Click your picture or add an account.</p>
-                </div> -->
-                <!-- <div class="account_container">
-                    <div class="account_add_card">
-                        <div class="add_sign">
-                            <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="75" cy="75" r="75" fill="#1877F2"/>
-                            <rect x="64" y="15" width="22" height="120" rx="11" fill="white"/>
-                            <rect x="135" y="64" width="22" height="120" rx="11" transform="rotate(90 135 64)" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="text_div">
-                            Add Account
-                        </div>
-                    </div>
-                </div> -->
-            </div>
+            <h1 class="logo ">facebook</h1>
+            <p style="font-size:30px;font-weight:400;">Connect with friends and the world around you on Facebook.</p>
         </div>
 
         <!-- Registration form start -->
